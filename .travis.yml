@@ -62,7 +62,8 @@ matrix:
 install: source build_tools/travis/install.sh
 script: bash build_tools/travis/test_script.sh
 after_success:
-- bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.hub.url="https://hubeval32.blackducksoftware.com" --blackduck.hub.username="ntu" --blackduck.hub.password="ntu@2018" --blackduck.hub.trust.cert=true --detect.policy.check=true
+- bash <(curl -s -s https://scripts.scantist.com/ci-travis.sh)
+#- bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.hub.url="https://hubeval32.blackducksoftware.com" --blackduck.hub.username="ntu" --blackduck.hub.password="ntu@2018" --blackduck.hub.trust.cert=true --detect.policy.check=true
 notifications:
   webhooks:
     urls:
